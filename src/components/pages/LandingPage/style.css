@@ -67,3 +67,14 @@
     }
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .accounts-container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .accounts-container {
+    width: 100%;
+  }
+}
