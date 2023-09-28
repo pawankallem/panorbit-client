@@ -40,10 +40,10 @@ export const LandingPage = () => {
           <h2>Select an account</h2>
         </header>
         <div className="accounts-list-container">
-          <ul className="unordered-list">
+          <ul className="cards-list">
             {accounts.map((account, index) => {
               return (
-                <li key={account.id} className="list">
+                <li key={account.id} className="card">
                   {userAccount(account)}
                   {index !== accounts.length - 1 && <hr />}
                 </li>

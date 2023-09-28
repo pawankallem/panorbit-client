@@ -30,7 +30,7 @@
   height: 80%;
   padding: 2% 2% 2% 5%;
 
-  .unordered-list {
+  .cards-list {
     height: 100%;
     box-sizing: border-box;
     overflow: scroll;
@@ -45,7 +45,7 @@
       border-radius: 6px;
     }
 
-    .list {
+    .card {
       padding: 2%;
 
       .user {
