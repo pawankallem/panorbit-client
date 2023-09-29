@@ -1,0 +1,27 @@
+.tab-header-container {
+  padding: 0 40px;
+  height: 100%;
+  .header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    border-bottom: 1px solid gray;
+
+    .profile-container {
+      /* width: 20%; */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      .image {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid;
+      }
+    }
+  }
+}

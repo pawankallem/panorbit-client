@@ -1,15 +1,19 @@
+import { useState } from "react";
 import "./style.css";
+import { TabHeader } from "../../utills/TabHeader";
+import { ComingSoom } from "../../utills/ComingSoon";
 export const HomePage = () => {
   const tabNames = ["Profile", "Posts", "Gallery", "ToDo"];
+  const [selectedTab, setSelectedTab] = useState("Profile");
 
   const tab = (name, index, isLastIndex) => {
     return (
-      <div className="tab" key={index}>
+      <div className="tab" key={index} onClick={() => setSelectedTab(name)}>
         <div className="name-and-line">
           <div className="name">{name}</div>
           {!isLastIndex && <hr />}
         </div>
-        <div className="selected-tab-icon">{">"}</div>
+        {selectedTab === name && <div className="selected-tab-icon">{">"}</div>}
       </div>
     );
   };
@@ -23,7 +27,14 @@ export const HomePage = () => {
           )}
         </div>
       </div>
-      <div className="details-container"></div>
+      <div className="details-container">
+        <div className="details-header">
+          <TabHeader tabName={selectedTab} />
+        </div>
+        <div className="user-details">
+          {selectedTab !== "Profile" ? <ComingSoom /> : <></>}
+        </div>
+      </div>
       <div className="chat-container"></div>
     </div>
   );

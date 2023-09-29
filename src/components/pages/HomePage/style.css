@@ -5,9 +5,10 @@
   padding-bottom: 0;
   display: grid;
   grid-template-rows: 90% 10%;
+  grid-template-columns: 20% repeat(3, 1fr);
   grid-template-areas:
     "tabs content content content content"
-    ". . . . chat";
+    ". . . chat chat";
 
   .tabs-container {
     border: 1px solid;
@@ -18,10 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    /* box-sizing: border-box; */
   }
   .details-container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     grid-area: content;
   }
   .chat-container {
@@ -40,7 +40,7 @@
     gap: 10%;
 
     .name-and-line {
-      flex: 1;
+      width: 70%;
       .name {
         padding: 10% 0;
         font-size: 18px;
@@ -60,4 +60,15 @@
       background-color: white;
     }
   }
+}
+
+.details-header {
+  /* border: 1px solid; */
+  height: 12%;
+  /* border-bottom: 1px solid gray; */
+}
+
+.user-details {
+  /* border: 1px solid teal; */
+  height: 88%;
 }

@@ -1,37 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./style.css";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const LandingPage = () => {
-  const [accounts, setAccounts] = useState([]);
+  const navigate = useNavigate();
+  const users = useSelector((state) => state.user.users);
 
-  const fetchAccount = async () => {
-    try {
-      const response = await axios.get("https://panorbit.in/api/users.json");
-      console.log("res: ", response);
-      if (response.status === 200 && response.data)
-        setAccounts(response.data.users);
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
-
-  const userAccount = (account, isLastIndex) => {
+  const userAccount = (user) => {
     return (
-      <div className="user">
-        <img
-          src={account.profilepicture}
-          alt={account.name}
-          className="user-image"
-        />
-        <div className="user-name">{account.name}</div>
+      <div className="user" onClick={() => navigate(`/home/${user.id}`)}>
+        <img src={user.profilepicture} alt={user.name} className="user-image" />
+        <div className="user-name">{user.name}</div>
       </div>
     );
   };
-
-  useEffect(() => {
-    fetchAccount();
-  }, []);
 
   return (
     <div className="landing-page-container">
@@ -41,11 +24,11 @@ export const LandingPage = () => {
         </header>
         <div className="accounts-list-container">
           <ul className="cards-list">
-            {accounts.map((account, index) => {
+            {users.map((user, index) => {
               return (
-                <li key={account.id} className="card">
-                  {userAccount(account)}
-                  {index !== accounts.length - 1 && <hr />}
+                <li key={user.id} className="card">
+                  {userAccount(user)}
+                  {index !== users.length - 1 && <hr />}
                 </li>
               );
             })}
