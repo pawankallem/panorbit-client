@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 import { TabHeader } from "../../utills/TabHeader";
 import { ComingSoom } from "../../utills/ComingSoon";
+import { fetchUsers } from "../../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 export const HomePage = () => {
   const tabNames = ["Profile", "Posts", "Gallery", "ToDo"];
   const [selectedTab, setSelectedTab] = useState("Profile");
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.user.users);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const tab = (name, index, isLastIndex) => {
     return (
