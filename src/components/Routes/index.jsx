@@ -32,8 +32,8 @@ export const Routers = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/home/:id" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home/:id" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
