@@ -6,8 +6,8 @@ export const Routers = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" Component={<LandingPage />} />
-        <Route path="/home/:id" Component={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home/:id" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
