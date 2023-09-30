@@ -1,15 +1,13 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./style.css";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 export const TabHeader = ({ tabName }) => {
-  const { pathname } = useLocation();
-  const path = pathname.split("/");
-
+  const { id } = useParams();
   const users = useSelector((state) => state.user.users);
   const user = useMemo(() => {
-    const temp = users.find((elem) => elem.id === +path[path.length - 1]);
+    const temp = users.find((elem) => elem.id === +id);
     return temp;
   }, [users]);
 
