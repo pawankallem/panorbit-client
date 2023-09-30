@@ -4,11 +4,11 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 export const TabHeader = ({ tabName }) => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const users = useSelector((state) => state.user.users);
   const user = useMemo(() => {
-    const temp = users.find((elem) => elem.id === +id);
-    return temp;
+    // const temp = users.find((elem) => elem.id ===);
+    return {};
   }, [users]);
 
   return (

@@ -32,7 +32,7 @@ export const LandingPage = () => {
 
   const userAccount = (user) => {
     return (
-      <div className="user" onClick={() => navigate(`/home/${user.id}`)}>
+      <div className="user" onClick={() => navigate(`/home`)}>
         <img src={user.profilepicture} alt={user.name} className="user-image" />
         <div className="user-name">{user.name}</div>
       </div>
