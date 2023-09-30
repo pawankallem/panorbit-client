@@ -11,7 +11,9 @@ export const Routers = () => {
 
   const fetchAccount = async () => {
     try {
+      console.log("before");
       const response = await axios.get("https://panorbit.in/api/users.json");
+      console.log("after ", response);
       if (response.status === 200 && response.data) {
         dispatch(setUsers(response.data.users));
       }
