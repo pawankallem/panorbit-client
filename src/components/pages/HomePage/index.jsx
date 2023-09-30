@@ -1,36 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./style.css";
 import { TabHeader } from "../../utills/TabHeader";
-import { ComingSoom } from "../../utills/ComingSoon";
-import { setUsers } from "../../redux/userSlice";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import { Profile } from "../../tabs/Profile";
+import { Posts } from "../../tabs/Posts";
+import { Gallery } from "../../tabs/Gallery";
+import { ToDo } from "../../tabs/ToDo";
 export const HomePage = () => {
   const tabNames = ["Profile", "Posts", "Gallery", "ToDo"];
   const [selectedTab, setSelectedTab] = useState("Profile");
-  const users = useSelector((state) => state.user.users);
-  const dispatch = useDispatch();
-
-  // const fetchAccount = async () => {
-  //   try {
-  //     console.log("users< ", users.length);
-  //     if (users.length > 0) return;
-  //     console.log("before");
-  //     const response = await axios.get("https://panorbit.in/api/users.json");
-  //     console.log("after ", response);
-  //     if (response.status === 200 && response.data) {
-  //       dispatch(setUsers(response.data.users));
-  //     }
-  //   } catch (error) {
-  //     console.log("error: ", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   console.log("mounting");
-  //   fetchAccount();
-  //   console.log("unmounting");
-  // }, []);
 
   const tab = (name, index, isLastIndex) => {
     return (
@@ -58,7 +35,10 @@ export const HomePage = () => {
           <TabHeader tabName={selectedTab} />
         </div>
         <div className="user-details">
-          {selectedTab !== "Profile" ? <ComingSoom /> : <></>}
+          {selectedTab === "Profile" && <Profile />}
+          {selectedTab === "Posts" && <Posts />}
+          {selectedTab === "Gallery" && <Gallery />}
+          {selectedTab === "ToDo" && <ToDo />}
         </div>
       </div>
       <div className="chat-container"></div>

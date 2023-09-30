@@ -21,7 +21,6 @@
     justify-content: right;
   }
   .details-container {
-    /* border: 1px solid red; */
     grid-area: content;
   }
   .chat-container {
@@ -63,12 +62,10 @@
 }
 
 .details-header {
-  /* border: 1px solid; */
   height: 12%;
-  /* border-bottom: 1px solid gray; */
 }
 
 .user-details {
-  /* border: 1px solid teal; */
   height: 88%;
+  padding: 5%;
 }
