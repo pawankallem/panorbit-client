@@ -5,10 +5,10 @@ import { useDispatch } from "react-redux";
 // import { setUsers } from "../redux/userSlice";
 import { useEffect } from "react";
 import axios from "axios";
-import { fetchUsers } from "../redux/userSlice";
+// import { fetchUsers } from "../redux/userSlice";
 
 export const Routers = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // const fetchAccount = async () => {
   //   try {
@@ -28,12 +28,6 @@ export const Routers = () => {
   //   fetchAccount();
   //   console.log("unmounting");
   // }, []);
-
-  // const users = useSelector((state) => state.user.users);
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
 
   return (
     <BrowserRouter>
