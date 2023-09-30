@@ -13,6 +13,7 @@ export const HomePage = () => {
 
   const fetchAccount = async () => {
     try {
+      console.log("users< ", users.length);
       if (users.length > 0) return;
       console.log("before");
       const response = await axios.get("https://panorbit.in/api/users.json");
