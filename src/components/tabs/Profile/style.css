@@ -7,10 +7,96 @@
   .left {
     width: 40%;
     border-right: 1px solid gray;
+    padding-right: 5%;
+    font-size: 18px;
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      padding: 5%;
+      .image {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
+    }
+
+    .name-container {
+      text-align: center;
+      color: #545454;
+    }
   }
 
   .right {
+    height: 100%;
     width: 60%;
+    padding-left: 5%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
     /* border: 1px solid red; */
+
+    .adress {
+      text-align: left;
+    }
+
+    .adress-details {
+      .contact-type {
+        flex: 2;
+        text-align: right;
+        color: #9a9a9a;
+        /* border: 1px solid teal; */
+      }
+
+      .colon {
+        flex: 1;
+        text-align: center;
+        /* border: 1px solid; */
+      }
+
+      .contact-name {
+        flex: 9;
+        /* border: 1px solid blue; */
+        text-align: left;
+        color: #545454;
+        overflow: hidden;
+      }
+    }
+
+    .map-container {
+      border: 1px solid red;
+      flex: 1;
+    }
   }
+}
+
+.user-personal-details {
+  display: flex;
+  box-sizing: border-box;
+
+  .contact-type {
+    flex: 4;
+    text-align: right;
+    color: #9a9a9a;
+    /* border: 1px solid teal; */
+  }
+
+  .colon {
+    flex: 1;
+    text-align: center;
+    /* border: 1px solid; */
+  }
+
+  .contact-name {
+    flex: 6;
+    /* border: 1px solid blue; */
+    text-align: left;
+    color: #545454;
+    overflow: hidden;
+  }
+}
+
+.heading-title {
+  text-align: center;
+  color: #9a9a9a;
 }
