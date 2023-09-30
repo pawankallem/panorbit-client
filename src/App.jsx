@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Provider store={store}>
-          <Routers />
-        </Provider>
+        {/* <Provider store={store}>
+        </Provider> */}
+        <Routers />
       </BrowserRouter>
     </>
   );
