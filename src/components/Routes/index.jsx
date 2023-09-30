@@ -24,7 +24,7 @@ export const Routers = () => {
 
   useEffect(() => {
     fetchAccount();
-  }, [dispatch]);
+  }, []);
 
   return (
     <Routes>
