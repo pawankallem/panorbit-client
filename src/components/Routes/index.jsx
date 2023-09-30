@@ -23,7 +23,9 @@ export const Routers = () => {
   };
 
   useEffect(() => {
+    console.log("mounting");
     fetchAccount();
+    console.log("unmounting");
   }, []);
 
   return (
