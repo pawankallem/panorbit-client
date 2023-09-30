@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { LandingPage } from "../pages/LandingPage";
 import { useDispatch } from "react-redux";
@@ -27,9 +27,11 @@ export const Routers = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route exact path="/" element={<LandingPage />} />
-      <Route exact path="/home/:id" element={<HomePage />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+        <Route exact path="/home/:id" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
