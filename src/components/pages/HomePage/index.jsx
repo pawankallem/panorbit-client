@@ -11,26 +11,26 @@ export const HomePage = () => {
   const users = useSelector((state) => state.user.users);
   const dispatch = useDispatch();
 
-  const fetchAccount = async () => {
-    try {
-      console.log("users< ", users.length);
-      if (users.length > 0) return;
-      console.log("before");
-      const response = await axios.get("https://panorbit.in/api/users.json");
-      console.log("after ", response);
-      if (response.status === 200 && response.data) {
-        dispatch(setUsers(response.data.users));
-      }
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
+  // const fetchAccount = async () => {
+  //   try {
+  //     console.log("users< ", users.length);
+  //     if (users.length > 0) return;
+  //     console.log("before");
+  //     const response = await axios.get("https://panorbit.in/api/users.json");
+  //     console.log("after ", response);
+  //     if (response.status === 200 && response.data) {
+  //       dispatch(setUsers(response.data.users));
+  //     }
+  //   } catch (error) {
+  //     console.log("error: ", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    console.log("mounting");
-    fetchAccount();
-    console.log("unmounting");
-  }, []);
+  // useEffect(() => {
+  //   console.log("mounting");
+  //   fetchAccount();
+  //   console.log("unmounting");
+  // }, []);
 
   const tab = (name, index, isLastIndex) => {
     return (

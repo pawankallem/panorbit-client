@@ -10,29 +10,29 @@ export const LandingPage = () => {
   const users = useSelector((state) => state.user.users);
   const dispatch = useDispatch();
 
-  const fetchAccount = async () => {
-    try {
-      if (users.length > 0) return;
-      console.log("before");
-      const response = await axios.get("https://panorbit.in/api/users.json");
-      console.log("after ", response);
-      if (response.status === 200 && response.data) {
-        dispatch(setUsers(response.data.users));
-      }
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
+  // const fetchAccount = async () => {
+  //   try {
+  //     if (users.length > 0) return;
+  //     console.log("before");
+  //     const response = await axios.get("https://panorbit.in/api/users.json");
+  //     console.log("after ", response);
+  //     if (response.status === 200 && response.data) {
+  //       dispatch(setUsers(response.data.users));
+  //     }
+  //   } catch (error) {
+  //     console.log("error: ", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    console.log("mounting");
-    fetchAccount();
-    console.log("unmounting");
-  }, []);
+  // useEffect(() => {
+  //   console.log("mounting");
+  //   fetchAccount();
+  //   console.log("unmounting");
+  // }, []);
 
   const userAccount = (user) => {
     return (
-      <div className="user" onClick={() => navigate(`/home`)}>
+      <div className="user" onClick={() => navigate(`/home/${user.id}`)}>
         <img src={user.profilepicture} alt={user.name} className="user-image" />
         <div className="user-name">{user.name}</div>
       </div>
