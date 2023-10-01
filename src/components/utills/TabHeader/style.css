@@ -21,5 +21,63 @@
         border-radius: 50%;
       }
     }
+
+    .pop-up-container {
+      position: relative;
+
+      .popup-container {
+        width: 300px;
+        height: 350px;
+        background: #ffffff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 20px;
+        position: absolute;
+        top: 140%;
+        right: 0;
+        text-align: center;
+        padding: 20%;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+
+        .logged-in-user-details {
+          .image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
+        }
+
+        .users-list {
+          .cards-list {
+            height: 120px;
+            box-sizing: border-box;
+            overflow: scroll;
+            list-style: none;
+            padding: 0 5%;
+
+            &::-webkit-scrollbar {
+              width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: #d8d8d8;
+              border-radius: 6px;
+            }
+          }
+        }
+
+        .sign-out {
+          .button {
+            background: #d55151;
+            border-radius: 30px;
+            padding: 5px 10px;
+            color: white;
+            font-weight: 600;
+            border: 1px solid transparent;
+          }
+        }
+      }
+    }
   }
 }

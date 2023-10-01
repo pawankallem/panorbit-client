@@ -1,7 +1,7 @@
 import "./style.css";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 export const Profile = () => {
   const { id } = useParams();
@@ -9,7 +9,7 @@ export const Profile = () => {
   const user = useMemo(() => {
     const temp = users.find((elem) => elem.id === +id);
     return temp;
-  }, [users]);
+  }, [users, id]);
 
   const userProfile = (key, value) => {
     return (

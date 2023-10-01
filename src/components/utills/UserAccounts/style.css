@@ -1,0 +1,16 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  padding: 1.8% 0;
+
+  .user-image {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+  }
+
+  .user-name {
+    font-size: 18px;
+  }
+}
